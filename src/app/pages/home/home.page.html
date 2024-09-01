@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title (click)="login()">Reciclica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list color="tertiary">
+    <ion-item color="tertiary">
+      <ion-avatar slot="start">
+        <img src="https://e7.pngegg.com/pngimages/599/803/png-clipart-pikachu-drawing-kavaii-pokemon-pikachu-television-face.png">
+      </ion-avatar>
+      <ion-label>
+        <h1>MUHAMMAD NASHAN FAUZIAN</h1>
+        <p>Gathered: <span class="money">$ 99,00</span></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <app-pickup-call-card status="hold" updateAt="27/04/2024 15:41" createdAt="22/03/2024"
+   notes="we have tho bags that are full, one with plastic and the other with glasses">
+    <ion-card-header header>
+      <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button color="tertiary" fill="clear" size="full" footer (click)="goToPickupCalls()">See all...</ion-button>
+  </app-pickup-call-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary" (click)="newPickupCall()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
