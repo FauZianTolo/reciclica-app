@@ -8,6 +8,8 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 import { ErrorMessageComponent } from 'src/app/components/error-message/error-message.component';
+import { SharedModule } from 'src/app/shared.module';
+
 
 @NgModule({
   imports: [
@@ -15,11 +17,13 @@ import { ErrorMessageComponent } from 'src/app/components/error-message/error-me
     FormsModule,
     IonicModule,
     RegisterPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
+
   ],
   declarations: [
     RegisterPage,
     // ErrorMessageComponent
-  ]
+]
 })
 export class RegisterPageModule {}

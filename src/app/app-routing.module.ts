@@ -3,8 +3,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'loader', pathMatch: 'full' },
-  { path: 'loader', loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule) },
+  {
+    path: '',
+    redirectTo: 'loader',
+    pathMatch: 'full'
+  },
+  {
+    path: 'loader',
+    loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
+  },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -15,18 +22,18 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-    , canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'pickup-call',
-    loadChildren: () => import('./pages/pickup-call/pickup-call.module').then( m => m.PickupCallPageModule)
-    , canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/pickup-call/pickup-call.module').then( m => m.PickupCallPageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'pickup-calls',
-    loadChildren: () => import('./pages/pickup-calls/pickup-calls.module').then( m => m.PickupCallsPageModule)
-    , canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/pickup-calls/pickup-calls.module').then( m => m.PickupCallsPageModule),
+    canLoad: [AuthGuard]
   }
 ];
 

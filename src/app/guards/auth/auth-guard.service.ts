@@ -1,31 +1,27 @@
-import { LoginState } from './../../../store/login/LoginState';
-import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
-import { CanLoad } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, switchMap, take } from 'rxjs';
+import { CanLoad, Router } from '@angular/router';
 import { AppState } from 'src/store/AppState';
-import { take, switchMap } from 'rxjs/operators';
-import { Router } from '@angular/router';
-
+import { Store } from '@ngrx/store';
+import { loginSuccess } from 'src/store/login/login.actions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
 
-  constructor(private store: Store<AppState>, private router: Router) { }
+  constructor(private store: Store<AppState>, private router:Router) { }
 
-  canLoad() : Observable<boolean> {
+  canLoad(): Observable<boolean> {
     return this.store.select('login').pipe(
       take(1),
-      switchMap(LoginState => {
-        if (LoginState.isLoggedIn){
+      switchMap(loginState => {
+        if (loginState.isLoggedIn){
           return of(true);
         }
         this.router.navigateByUrl('login');
         return of(false);
       })
-    )
+    );
   }
-
 }

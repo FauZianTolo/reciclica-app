@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title (click)="login()">Reciclica</ion-title>
+    <ion-title>Reciclica</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,17 +11,16 @@
   <ion-list color="tertiary">
     <ion-item color="tertiary">
       <ion-avatar slot="start">
-        <img src="https://e7.pngegg.com/pngimages/599/803/png-clipart-pikachu-drawing-kavaii-pokemon-pikachu-television-face.png">
+        <img src="https://www.shutterstock.com/image-vector/cute-panda-dabbing-pose-cartoon-260nw-2471990065.jpg"/>
       </ion-avatar>
       <ion-label>
-        <h1>MUHAMMAD NASHAN FAUZIAN</h1>
-        <p>Gathered: <span class="money">$ 99,00</span></p>
+        <h1>Muhammad Nashan Fauzian</h1>
+        <p>Price: <span class="money">Rp 99.000</span></p>
       </ion-label>
     </ion-item>
   </ion-list>
 
-  <app-pickup-call-card status="hold" updateAt="27/04/2024 15:41" createdAt="22/03/2024"
-   notes="we have tho bags that are full, one with plastic and the other with glasses">
+  <app-pickup-call-card status="hold" updatedAt="24/08/2024 12:30:00" createdAt="23/08/2024" notes="Menerima jual beli kacamata online dan offline">
     <ion-card-header header>
       <ion-card-subtitle>Last pickup call</ion-card-subtitle>
     </ion-card-header>
@@ -29,7 +28,7 @@
   </app-pickup-call-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="tertiary" (click)="newPickupCall()">
+    <ion-fab-button color="tertiary" (click)="goToPickupCall()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
